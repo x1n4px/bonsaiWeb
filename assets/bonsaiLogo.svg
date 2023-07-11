@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1430" height="300" transform="matrix(1,0,0,1,0,0)">
+  <text font-family="DM Sans" font-size="260" text-anchor="left" x="310" charspacing="20px">
+    <tspan dy="239.20000000000002" x="310">bonsai</tspan>
+  </text>
+  <path transform="matrix(-1,1.2246467991473532e-16,-1.2246467991473532e-16,-1,155,155)" d="M87.564,-8.266A45,45,121.4008026757321,0,1,98.493,34.4L91,62.5A16.942007188806656,16.942007188806656,-325.364129222189,0,1,58.68,63.847L0,-100ZM-87.564,-8.266A45,45,-121.4008026757321,0,0,-98.493,34.4L-91,62.5A16.942007188806656,16.942007188806656,325.364129222189,0,0,-58.68,63.847L0,-100Z"/>
+</svg>
