@@ -1,0 +1,90 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-left">
+      <div class="hamburger-menu" (click)="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <a (click)="toggleMenu()" class="aLogo" href=""><img id="svgImg" class="logo" src="./assets/bonsaiLogo.png"
+          alt="Logo"></a>
+
+    </div>
+    <div class="navbar-center">
+      <div class="dropdown">
+        <button class="dropbtn">Product
+          <img src="../../../assets/caret-down.svg">
+        </button>
+        <div class="dropdown-content">
+          <a href="">Link1</a>
+          <a href="">Linl2</a>
+          <a href="">Link3</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Templates
+          <img src="../../../assets/caret-down.svg">
+        </button>
+        <div class="dropdown-content">
+          <a href="">Link1</a>
+          <a href="">Linl2</a>
+          <a href="">Link3</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Pricing</button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Reviews</button>
+      </div>
+    </div>
+    <div class="navbar-right">
+      <button id="logIn">LOG IN</button>
+      <button id="startFree">START FREE</button>
+
+    </div>
+
+  </div>
+
+  <div class="sidebar" [ngClass]="{'show': showMenu}">
+    <div class="sidebar-icon">
+      <a (click)="toggleMenu()">X</a>
+    </div>
+    <div class="sidebar-family">
+      <a (click)="selecction = 1">Product</a>
+      <a (click)="selecction = 2">Templates</a>
+      <a (click)="selecction = 3">Pricing</a>
+      <a (click)="selecction = 4">Reviews</a>
+    </div>
+    <div class="sidebar-info">
+      <div *ngIf="selecction === 1">
+        <a>Lorem ipsum dolor sit.</a>
+        <a>CLorem ipsum dolor sit.</a>
+        <a>Lorem ipsum dolor sit.</a>
+        <a>Lorem ipsum dolor sit.</a>
+      </div>
+      <div *ngIf="selecction === 2">
+        <a>Lorem ipsum dolor sit.</a>
+        <a>CLorem ipsum dolor sit.</a>
+        <a>Lorem ipsum dolor sit.</a>
+      </div>
+      <div *ngIf="selecction === 3">
+        <a>Lorem ipsum dolor sit.</a>
+        <a>CLorem ipsum dolor sit.</a>
+        <a>Lorem ipsum dolor sit.</a>
+        <a>Lorem ipsum dolor sit.</a>
+        <a href="">Lorem ipsum dolor sit amet consectetur adipisicing.</a><a href="">Odit quo minus ducimus, voluptates
+          exercitationem dicta!</a>
+      </div>
+      <div *ngIf="selecction === 4">
+        <a>Lorem ipsum dolor sit.</a>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</nav>

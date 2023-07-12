@@ -1,0 +1,114 @@
+<body>
+  <section id="cabecera">
+
+    <h1>Plans & Pricing</h1>
+    <div class="switch">
+      <h1 id="month">MONTHLY</h1>
+      <div class="switchCentrado">
+        <div class="toggle-switch">
+          <input [(ngModel)]="switchValue" (change)="onSwitchChange()" class="toggle-input" id="toggle" type="checkbox">
+          <label class="toggle-label" for="toggle"></label>
+        </div>
+      </div>
+
+
+
+      <h1 id="year">YEARLY</h1>
+    </div>
+  </section>
+
+  <section id="tarjetas">
+    <div class="card" *ngFor="let model of modelos">
+      <p id="modelNombre">{{model.nombre}}</p>
+      <p><span id="modelMoneda">{{model.tipo_moneda}}</span>
+        <span id="modelPrecio" *ngIf="!switchValue">{{model.precio_mensual}}</span>
+        <span id="modelPrecio" *ngIf="switchValue">{{model.precio_anual}}</span>
+        <span *ngIf="!switchValue">MONTH</span>
+        <span *ngIf="switchValue">ANUAL</span>
+      </p>
+      <div class="separador"></div>
+      <div class="contenidos" *ngFor="let contenido of model.condiciones">
+        <p><img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAexJREFUSEudVUtygkAQfQ0Gt9xEj4AHSFXwIinduIwu3UhOopUTwBHkJmzFwKRmGGG+QIUNxTDT/ea9190E/hAA1r/EAoHxJfW3/Jp+iXBKTD2M/OGOrCeek4qH6x8rtgrFdxv1kJWRQG7A+qnhS+XSH9mM6byBTxshlnVtPfGgn3EDN12OO1rgfcJxzfz4/+kh6cZZLvLZxAR8vcS0eH6y98NJcb20u8dFoxZU3XXNYoSPnIjWrMUJH4ejSfWEna0qHPbfshhU5wjYGqASv1GC7b5SjdBpIBEJ9c0ydJmGn7ldYgTPHIQ1wEo0ywTbXWWZbLROfDJz5MEjB9EaQIkmSpDuqm67XUNuin7OR7TR93BQbhPBa4GcgJKpwT2Oto36cz4S4Yu1uINFG5GEH75mMQV1zgQtKKmJEiaQ+xuYpkEvDuc3fBYAVmDsjna5ESgk8o6Wt4TSfWVI5OzEOtMvMJyKRV2AsRUY3SW9HefCLS/OTeZ113krWWzjScJHAdBKstAJqrrF55LemRNVgFsWU1gXgoomSijdVa9h4jCNEW1WL+Kez2JxMrWLqNPAX4waRdaYnCgSa05YbIy0azdzdhFpc9vRxsdv4Mjid/yweeg2Lw3m9ItpRZ2NRZvJKgZ17Jnd0S4uX9MC/gAUb+UjWslKCAAAAABJRU5ErkJggg==" />{{contenido}}
+        </p>
+      </div>
+      <div class="btnSeparador">
+        <button id="tarjetaBtn">{{model.tipo_empiece}}</button>
+
+      </div>
+      <div class="bandera" *ngIf="model.popular">
+        MOST POPULAR
+      </div>
+    </div>
+
+
+  </section>
+
+
+  <section id="addons">
+    <header>
+      <p>Super charge your work with add-ons</p>
+    </header>
+    <div class="tarjetaHorizontales" *ngFor="let dato of addOns">
+      <div class="tarjetaIzquierda">
+        <p>{{dato.nombre}}</p>
+        <p>{{dato.texto}}</p>
+        <a *ngIf="dato.url !== ''">{{dato.url}} <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAf5JREFUSEuFVst1wjAQnM17UE9SiEOcCuwOSA4YOJkb3KCEdBBcAenA6YB04NxjK8+2LO3qA77Ak6z9zM6MTDAPAVCA/EG/QFD9jvcMr+r3w5tjuNhRuR4LdOf0mMA9XB3qoeiOcqSrOla611moexubZan2GqsheYmk2IkkHjYcRlmt6MCcOx8E5KRQq7ZL8bq9DnPij1e1BIRudsCLITToqKTF6jSluD8WgkhgMK0OPjlMNLqgnaVI3xuvG68zkUC31gc68wR9vR7ZGhByJMXnGJPjJNtmJ/mQnRmMCrGhhldVr5BP1c5ztxuRwhIiwiIxUd6N+X8FdTklm4tkhtWtL5VKdhAWo0emo2rnO6RvjYuaaZ4POSjAASgK2Ile71DjpXiKJGAVTR1orMNBGSnsgL6RrB+5wsNeFIUoOIMRbIUTFuulC9yoA9+L2NLAlqCb6mA/oDajZKuHLN2XCY1DpL3IkyqfQW9X9IG/+dIMNmIhd1gUEJrCLx6QWaFxkTgghb0oIDQjVjqrdpZJOrrqtReUP2RtFV5bfdWkSjyvj9NeUKTicnG8yPB3smtb2BfaLkO6uXJSBLt3KhP3gdmr9sowR2GHRVFOThS7nx2jMqFiOhivyZYyeWU6FGQmaAuX1PPdVGMwVOrhER9m2FqiXxXcBrjX36AjEyyfzT+H9govDrn2ygAAAABJRU5ErkJggg==" /></a>
+      </div>
+      <div class="tarjetaDerecha">
+
+        <p> <span id="monedaTarj" *ngIf="dato.precio !== 'FREE'">{{dato.moneda}}</span>
+          <span id="precioTarj" *ngIf="dato.precio !== 'FREE'">{{dato.precio}}</span>
+          <span id="precioTarjF" *ngIf="dato.precio === 'FREE'">{{dato.precio}}</span><br>
+
+          <span id="pagoTarj" *ngIf="dato.precio !== 'FREE'">{{dato.tipo_pago}}</span>
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="square">
+    <div class="squareIzquierda">
+      <p>It's <span style="color: #00b289;">your</span> business.<br>We're here to help it grow</p>
+    </div>
+    <div class="squareDerecha">
+      <button>START FREE</button>
+    </div>
+  </section>
+
+
+  <section id="questions">
+    <header>
+      <p>Frequently Asked Questions</p>
+    </header>
+    <div class="separadores">
+      <details>
+        <summary>
+          How does the 14 day free trial work?
+        </summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ipsam praesentium. Eveniet, numquam
+          suscipit?</p>
+      </details>
+      <details>
+        <summary>Can i change plans anytime?</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ipsam praesentium. Eveniet, numquam
+          suscipit?</p>
+
+      </details>
+      <details>
+        <summary>How do I pause my Bonsai subscription?</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ipsam praesentium. Eveniet, numquam
+          suscipit?</p>
+      </details>
+      <details>
+        <summary>What is your refund policy?</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ipsam praesentium. Eveniet, numquam
+          suscipit?</p>
+
+      </details>
+    </div>
+  </section>
+</body>

@@ -1,0 +1,451 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+section {
+  width: 80%;
+  display: flex;
+}
+
+#cabecera h1 {
+  justify-content: flex-start;
+  width: 20%;
+}
+
+
+.switch {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80%;
+}
+
+
+#month {
+  text-align: right;
+}
+
+#year {
+  text-align: left;
+}
+
+.switchCentrado {
+  width: 50px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+/* Genel stil */
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 40px;
+}
+
+/* Giriş stil */
+.toggle-switch .toggle-input {
+  display: none;
+}
+
+/* Anahtarın stilinin etrafındaki etiketin stil */
+.toggle-switch .toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 34px;
+  border: 2px solid #00b289;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Anahtarın yuvarlak kısmının stil */
+.toggle-switch .toggle-label::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+/* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
+.toggle-switch .toggle-input:checked+.toggle-label {
+  background-color: #00b289;
+}
+
+.toggle-switch .toggle-input:checked+.toggle-label::before {
+  transform: translateX(16px);
+}
+
+/* Light tema */
+.toggle-switch.light .toggle-label {
+  background-color: #BEBEBE;
+}
+
+.toggle-switch.light .toggle-input:checked+.toggle-label {
+  background-color: #9B9B9B;
+}
+
+.toggle-switch.light .toggle-input:checked+.toggle-label::before {
+  transform: translateX(6px);
+}
+
+/* Dark tema */
+.toggle-switch.dark .toggle-label {
+  background-color: #4c4d5f;
+}
+
+.toggle-switch.dark .toggle-input:checked+.toggle-label {
+  background-color: #717171;
+}
+
+.toggle-switch.dark .toggle-input:checked+.toggle-label::before {
+  transform: translateX(16px);
+}
+
+
+#tarjetas {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+
+.card {
+  border: 1px solid #4c4d5f;
+  border-radius: 5px;
+
+  width: calc(25%);
+  height: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #fff;
+  color: #4c4d5f;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: relative;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+
+.separador {
+  margin-right: 50px;
+  border-bottom: 2px solid #00b289;
+}
+
+.btnSeparador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+
+}
+
+
+.btnSeparador button {
+  padding: 20px;
+  width: 100%;
+  font-weight: 600;
+  font-size: medium;
+  color: #fff;
+  background-color: #00b289;
+  border: #00b289;
+  border-radius: 5px;
+}
+
+
+#modelNombre {
+  font-size: 2em;
+}
+
+#modelMoneda {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+#modelPrecio {
+  font-size: 3em;
+  font-weight: 600;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-right: 10px;
+}
+
+.contenidos {
+  font-size: 0.9em;
+}
+
+.contenidos img {
+  width: 15px;
+  margin-right: 10px;
+}
+
+
+.bandera {
+  position: absolute;
+  top: 40px;
+  right: -40px;
+  background-color: #00b289;
+  color: white;
+  padding: 5px 30px;
+  transform: rotate(45deg);
+  z-index: 9999;
+}
+
+#addons {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+
+#addons header {
+  width: 100%;
+  text-align: center;
+  font-size: 1.8em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.tarjetaHorizontales {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-bottom: 20px;
+  padding: 30px 0px 30px 40px;
+  display: flex;
+}
+
+.tarjetaIzquierda {
+  flex: 90%;
+}
+
+.tarjetaIzquierda a {
+  color: #00b289;
+
+}
+
+.tarjetaIzquierda a img {
+  width: 12px;
+}
+
+.tarjetaDerecha {
+  flex: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#precioTarj,
+#monedaTarj {
+  font-size: 2em;
+}
+
+#precioTarjF {
+  font-size: 1.5em;
+}
+
+#pagoTarj {
+  font-size: 0.5em;
+}
+
+#square {
+  width: 80%;
+  background-color: #f3fbff;
+  height: 400px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+}
+
+.squareIzquierda {
+  flex: 70%;
+  display: flex;
+  font-size: 3em;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.squareDerecha {
+  flex: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.squareDerecha button {
+  background-color: #00b289;
+  border: 1px solid #00b289;
+  padding: 20px 40px;
+  font-weight: 600;
+  font-size: 0.8em;
+  border-radius: 5px;
+  color: #fff;
+}
+
+
+#questions {
+  width: 80%;
+  height: 400px;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+#questions header {
+  width: 100%;
+}
+
+#questions header p {
+  font-size: 2em;
+  text-align: center;
+  color: #00b289;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.separadores {
+  display: flex;
+  font-size: 1.2em;
+  margin-left: 50px;
+  flex-direction: column;
+  text-align: center;
+}
+
+
+.separadores details {
+  margin-bottom: 30px;
+
+}
+
+.separador details p {
+  text-align: center;
+}
+
+
+
+
+@media (max-width: 767px) {
+  body {
+    overflow: hidden;
+  }
+  /* Estilos específicos para dispositivos con un ancho máximo de 767px */
+  /* Ajusta los estilos aquí para la versión móvil */
+  section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: ce;
+  }
+
+
+  #cabecera {
+    margin-top: 50px;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+  #cabecera h1 {
+    justify-content: flex-start;
+    width: 100%;
+    text-align: center;
+  }
+
+  .switch {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+
+
+#tarjetas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    margin-top: 30px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 5px;
+ }
+
+
+.card {
+  border: 1px solid #4c4d5f;
+  border-radius: 5px;
+
+  width: calc(70%);
+  height: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #fff;
+  color: #4c4d5f;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: relative;
+  overflow: hidden;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+
+  #addons {
+    width: 80%;
+  }
+
+  .tarjetaIzquierda {
+    flex: 70%;
+  }
+
+  .tarjetaDerecha {
+    flex: 30%;
+  }
+
+
+#square {
+  width: 90%;
+  background-color: #f3fbff;
+  height: 400px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  margin-left: 20px;
+  flex-direction: column;
+}
+
+
+  #questions {
+    height: 400px;
+    margin-bottom: 100px;
+  }
+
+
+}
